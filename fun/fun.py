@@ -48,21 +48,7 @@ class fun(commands.Cog):
         else:
             await ctx.send(ctx.author.avatar_url)
 
-    @commands.command()
-    @commands.has_permissions(add_reactions=True)
-    async def bstats(self, ctx):
-        """Command to check a few bot statistics."""
-        python_version = platform.python_version()
-        discord_py_version = discord.__version__
-        total_guilds = len(self.bot.guilds)
-        total_members = len(set(self.bot.get_all_members()))
-        embed = discord.Embed(name='Bot stats', color=discord.Color.red())
-        embed.set_author(name='Roger bot')
-        embed.add_field(name='**Python Version:**', value=python_version, inline=False)
-        embed.add_field(name='**Library Version:**', value=discord_py_version, inline=False)
-        embed.add_field(name='**Server Count:**', value=str(total_guilds), inline=False)
-        embed.add_field(name='**Total Members:**', value=str(total_members), inline=False)
-        await ctx.send(embed=embed)
+
 
 
 
